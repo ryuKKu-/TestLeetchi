@@ -1,0 +1,36 @@
+Énoncé :
+
+Faire une application Console en C# qui permet :
+D'afficher une liste de mobilier (créér classe abstraite?) de type: Chaise, Table, Fauteuil . Chacun d'eux possède les propriétés suivantes  : Nom du designer, hauteur, poids, prix
+ 
+Exemple d'affichage :  § Chair Albert 200cm 25kg 230€
+
+Ajouter un mobilier à cette liste à l'aide de la console
+Exemple :  § Add Table Simon 150 43 150
+Un service se chargera du parsing de la chaîne reçue.
+ 
+Sauvegarder automatiquement en JSON (https://stackoverflow.com/a/25729386)
+
+Utiliser une classe "Shipment" qui permet d'estimer le prix de la livraison à partir de son poids et de sa taille. Sachant que nous avons affaire à des designers indépendants, chaque article à son prix de livraison propre.
+ 
+Voici l’interface de la classe Shipment et son implémentation :
+ 
+public interface IShipment {
+int Compute(int poids, int hauteur) ;
+}
+public class Shipment : IShipment {
+public int Compute(int poids, int hauteur) {
+return poids* hauteur * 0,001;
+}
+} 
+
+Ré-afficher la liste avec l'estimation de la livraison en fin de chaîne.
+
+Ré-afficher cette liste, mais avec une autre implémentation de IShipment : ColissimoShipment
+
+public class ColissimoShipment : IShipment
+{
+public int Compute(int poids, int hauteur) {
+return poids * 0,55 + hauteur * 0,001;
+}
+}
