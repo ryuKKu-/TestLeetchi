@@ -5,6 +5,11 @@ namespace TestLeechi.Parser
 {
     public class MobilierParser
     {
+        /// <summary>
+        /// Parse une chaine de caractères pour créer un objet mobilier
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
         public Mobilier Parse(string str)
         {
             var tokens = str.Split(' ');

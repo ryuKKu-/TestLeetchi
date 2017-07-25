@@ -31,13 +31,13 @@ namespace TestLeechi.ConsoleMenu
 
             switch (choice)
             {
-                case 1:
+                case 1: // Afficher la liste des mobiliers
                     mobiliers = Repository.Get();
                     foreach (var m in mobiliers)
                         Console.WriteLine(m.Display());
                     break;
 
-                case 2:
+                case 2: // Ajouter un mobilier
                     var cmd = Console.ReadLine();
                     try
                     {
@@ -51,7 +51,7 @@ namespace TestLeechi.ConsoleMenu
                     }
                     break;
 
-                case 3:
+                case 3: // Afficher la liste avec l'estimation de la livraison
                     mobiliers = Repository.Get();
                     method = new Shipment();
                     foreach(var m in mobiliers)
@@ -61,7 +61,7 @@ namespace TestLeechi.ConsoleMenu
                     }
                     break;
 
-                case 4:
+                case 4: // Afficher la liste avec l'estimation de la livraison colissimo
                     mobiliers = Repository.Get();
                     method = new ColissimoShipment();
                     foreach (var m in mobiliers)

@@ -9,6 +9,10 @@ namespace TestLeechi.Data
     {
         private static List<Mobilier> _mobiliers = new List<Mobilier>();
 
+        /// <summary>
+        /// Récupère la liste des mobiliers à partir d'un fichier json
+        /// </summary>
+        /// <returns></returns>
         public static IEnumerable<Mobilier> Get()
         {
             if (File.Exists("list.json"))
@@ -22,6 +26,10 @@ namespace TestLeechi.Data
             return _mobiliers;
         }
 
+        /// <summary>
+        /// Sauvegarde le nouveau mobilier dans le fichier json
+        /// </summary>
+        /// <param name="item"></param>
         public static void AddItem(Mobilier item)
         {
             _mobiliers.Add(item);
